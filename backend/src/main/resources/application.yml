@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: experience-planner
+  datasource:
+    url: jdbc:postgresql://localhost:5432/experience_planner
+    username: planner
+    password: planner
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+server:
+  port: 8080
