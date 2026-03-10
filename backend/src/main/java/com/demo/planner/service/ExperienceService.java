@@ -49,7 +49,7 @@ public class ExperienceService {
 
     @Transactional
     public BookingResponse createBooking(Long experienceId, CreateBookingRequest request) {
-        Experience experience = experienceRepository.findById(experienceId)
+        Experience experience = experienceRepository.findByIdForUpdate(experienceId)
                 .orElseThrow(() -> new EntityNotFoundException("Experience not found"));
 
         UserAccount guest = userAccountRepository.findById(request.guestUserId())
